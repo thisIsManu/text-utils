@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useReducer } from "react";
+import Navbar from "./components/Navbar";
+import "./App.css";
+import TextForm from "./components/TextForm";
+import AboutUs from "./components/AboutUs";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
 
 function App() {
+  const [theme, setTheme] = useState('light');
+
+  
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Router>
+        <Navbar title="TextUtils" aboutLabel="About" theme={theme} themeToggle = {setTheme}/>
+      <Routes>
+        <Route element={<AboutUs/>} path="/aboutUs"/>
+        <Route element={<TextForm  theme={theme}/> } path={"/textUtils"} />
+      </Routes>
+      </Router>
+    </>
   );
 }
 
