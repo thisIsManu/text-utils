@@ -13,13 +13,15 @@ function App() {
 
   return (
     <>
-    <Router>
+    <Navbar title="TextUtils" aboutLabel="About" theme={theme} themeToggle = {setTheme}/>
+    <TextForm  theme={theme}/>
+    {/* <Router>
         <Navbar title="TextUtils" aboutLabel="About" theme={theme} themeToggle = {setTheme}/>
       <Routes>
         <Route element={<AboutUs/>} path="/aboutUs"/>
         <Route element={<TextForm  theme={theme}/> } path={"/textUtils"} />
       </Routes>
-      </Router>
+      </Router> */}
     </>
   );
 }

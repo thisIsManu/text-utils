@@ -1,16 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { toast, ToastContainer } from "react-toastify";
-import {Link} from 'react-router-dom';
+// import {Link} from 'react-router-dom';
 
 
 function Navbar({ title, aboutLabel, theme, themeToggle }) {
   return (
     <nav className={`navbar navbar-${theme} navbar-expand-lg nav bg-${theme}`}>
       <div className="container-fluid">
-        <Link to="/textUtils" action  className="navbar-brand">
+        <a href="#" action  className="navbar-brand">
             {title}
-        </Link>
+        </a>
         <button
           className="navbar-toggler"
           type="button"
@@ -25,15 +25,15 @@ function Navbar({ title, aboutLabel, theme, themeToggle }) {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <Link className="nav-link active" aria-current="page" to="/textUtils" action>
+              <a className="nav-link active" aria-current="page" href="#" action>
                 Home
-              </Link>
+              </a>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <Link className="nav-link" to="/aboutUs" action >
                 {aboutLabel}
               </Link>
-            </li>
+            </li> */}
           </ul>
           <ToastContainer />
           <div
